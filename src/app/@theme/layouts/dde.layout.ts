@@ -5,9 +5,8 @@ import { Component } from '@angular/core';
   selector: 'app-dde-layout',
   styleUrls: ['./dde.layout.scss'],
   template: `
-    <dde-layout>
-      <app-dde-header fixed></app-dde-header>
-    </dde-layout>
+    <app-dde-header fixed></app-dde-header>
+    <ng-content select="router-outlet"></ng-content>
   `,
 })
 export class DDELayoutComponent {

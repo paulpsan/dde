@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { NgModule } from '@angular/core';
 
+import { APP_BASE_HREF } from '@angular/common';
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ThemeModule } from './@theme/theme.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +12,13 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    AppRoutingModule,
+
+    ThemeModule.forRoot()
   ],
-  providers: [],
+  providers: [
+    { provide:  APP_BASE_HREF, useValue: '/' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
