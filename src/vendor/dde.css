@@ -6131,10 +6131,6 @@ footer .container {
     position: relative
 }
 
-.header .row div[role="navigation"] .menu-header-gray-part-menu-container li:first-child {
-    display: none
-}
-
 .header .row div[role="navigation"] .menu-header-gray-part-menu-container li.grey {
     background-color: #f5f5f5
 }
