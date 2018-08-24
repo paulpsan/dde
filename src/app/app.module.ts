@@ -1,10 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { APP_BASE_HREF } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ApolloBoostModule, ApolloBoost } from 'apollo-angular-boost';
 import { ThemeModule } from './@theme/theme.module';
+
+import { ArticlesService } from './@core/data/articles/articles.service';
 
 @NgModule({
   declarations: [
@@ -13,12 +17,20 @@ import { ThemeModule } from './@theme/theme.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-
+    HttpClientModule,
+    ApolloBoostModule,
     ThemeModule.forRoot()
   ],
   providers: [
-    { provide:  APP_BASE_HREF, useValue: '/' }
+    { provide:  APP_BASE_HREF, useValue: '/' },
+    ArticlesService
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor(private apollo: ApolloBoost) {
+    apollo.create( {
+      uri: 'http://localhost:1337/graphql'
+    });
+  }
+}

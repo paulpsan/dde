@@ -17,19 +17,9 @@
     <section class="cards roboto">
         <div class="container">
             <div class="row">
-                <div class="card_wrap">
-                    <div class="card" data-scroll-to="target_2">
-                        <h5 class="card_inner"> Noticia 1</h5>
-                    </div>
-                </div>
-                <div class="card_wrap">
-                    <div class="card" data-scroll-to="target_4">
-                        <h5 class="card_inner"> Noticia 2</h5>
-                    </div>
-                </div>
-                <div class="card_wrap">
-                    <div class="card" data-scroll-to="target_3">
-                        <h5 class="card_inner"> Noticia 3</h5>
+                <div class="card_wrap" *ngFor="let article of articles">
+                    <div class="card">
+                        <h5 class="card_inner">{{ article.titulo }}</h5>
                     </div>
                 </div>
             </div>
