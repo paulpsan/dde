@@ -25,7 +25,7 @@ export class ArticlesService {
         query: GET_LAST_ARTICLES
       })
       .valueChanges.pipe(
-        map(result => result.data.articulos)
+        map(result => result.data['articulos'])
       );
   }
 }
