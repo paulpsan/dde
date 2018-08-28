@@ -9,6 +9,7 @@ import { ApolloBoostModule, ApolloBoost } from 'apollo-angular-boost';
 import { ThemeModule } from './@theme/theme.module';
 
 import { ArticlesService } from './@core/data/articles/articles.service';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ArticlesService } from './@core/data/articles/articles.service';
 export class AppModule {
   constructor(private apollo: ApolloBoost) {
     apollo.create( {
-      uri: 'http://localhost:1337/graphql'
+      uri: environment.BASE_GRAPHQL_URL
     });
   }
 }
