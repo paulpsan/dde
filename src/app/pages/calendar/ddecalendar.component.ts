@@ -39,12 +39,12 @@ const colors: any = {
 };
 
 @Component({
-  selector: 'app-calendar',
+  selector: 'app-ddecalendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: [ './calendar.component.scss' ],
-  templateUrl: './calendar.component.html'
+  styleUrls: [ './ddecalendar.component.scss' ],
+  templateUrl: './ddecalendar.component.html'
 })
-export class CalendarComponent {
+export class DDECalendarComponent {
   @ViewChild('modalContent')
   modalContent: TemplateRef<any>;
 

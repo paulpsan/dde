@@ -2,6 +2,7 @@ import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+import { DDECalendarModule } from '../pages/calendar/ddecalendar.module';
 
 import {
   FooterComponent,
@@ -26,10 +27,13 @@ const COMPONENTS = [
 
 @NgModule({
   imports: [
-    ...BASE_MODULES
+    ...BASE_MODULES,
+    DDECalendarModule
   ],
   exports: [...BASE_MODULES, ...COMPONENTS],
-  declarations: [...COMPONENTS]
+  declarations: [
+    ...COMPONENTS
+  ]
 })
 export class ThemeModule {
   static forRoot(): ModuleWithProviders {

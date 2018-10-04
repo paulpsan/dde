@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { CalendarComponent } from './calendar/calendar.component' ;
 
 const routes: Routes = [{
   path: '',
@@ -12,11 +11,8 @@ const routes: Routes = [{
     path: 'dashboard',
     component: DashboardComponent
   }, {
-    path: 'calendario',
-    component: CalendarComponent
-  }, {
     path: '',
-    redirectTo: 'calendario',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
   }]
 }];
