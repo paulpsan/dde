@@ -27,7 +27,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/flatpickr/dist/flatpickr.css",
               "src/styles.scss",
               "src/vendor/dde.css"
             ],

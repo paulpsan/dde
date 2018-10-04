@@ -1,6 +1,7 @@
 import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
 
 import {
   FooterComponent,
@@ -10,7 +11,12 @@ import {
   DDELayoutComponent
 } from './layouts/dde.layout';
 
-const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
+const BASE_MODULES = [
+  CommonModule,
+  FormsModule,
+  ReactiveFormsModule,
+  NgbModalModule
+];
 
 const COMPONENTS = [
   HeaderComponent,
@@ -19,7 +25,9 @@ const COMPONENTS = [
 ];
 
 @NgModule({
-  imports: [...BASE_MODULES],
+  imports: [
+    ...BASE_MODULES
+  ],
   exports: [...BASE_MODULES, ...COMPONENTS],
   declarations: [...COMPONENTS]
 })
