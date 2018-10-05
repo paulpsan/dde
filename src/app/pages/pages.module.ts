@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
-import { DDECalendarModule } from '../pages/calendar/ddecalendar.module';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,8 +14,7 @@ const PAGES_COMPONENTS = [
 @NgModule({
   imports: [
     PagesRoutingModule,
-    ThemeModule,
-    DDECalendarModule
+    ThemeModule
   ],
   declarations: [
     ...PAGES_COMPONENTS

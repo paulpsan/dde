@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { DDECalendarComponent } from '../../../pages/calendar/ddecalendar.module';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { DDECalendarComponent } from '../calendar/ddecalendar.component';
 
 @Component({
   selector: 'app-dde-header',
@@ -14,6 +14,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit() { }
 
   openCalendar() {
-    const modalRef = this.modalService.open(DDECalendarComponent);
+    const modalRef = this.modalService.open(DDECalendarComponent, {
+      size: 'lg',
+      centered: true
+    });
   }
 }

@@ -41,7 +41,7 @@ const colors: any = {
 @Component({
   selector: 'app-ddecalendar',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  styleUrls: [ './ddecalendar.component.scss' ],
+  styleUrls: ['./ddecalendar.component.scss'],
   templateUrl: './ddecalendar.component.html'
 })
 export class DDECalendarComponent {
@@ -51,6 +51,8 @@ export class DDECalendarComponent {
   view: CalendarView = CalendarView.Month;
 
   CalendarView = CalendarView;
+
+  locale = 'es-ES';
 
   viewDate: Date = new Date();
 

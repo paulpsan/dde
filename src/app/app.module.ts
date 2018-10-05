@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 
+import { registerLocaleData } from '@angular/common';
+import localEs from '@angular/common/locales/es';
+
 import { APP_BASE_HREF } from '@angular/common';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,5 +38,7 @@ export class AppModule {
     apollo.create( {
       uri: environment.BASE_GRAPHQL_URL
     });
+
+    registerLocaleData(localEs, 'es');
   }
 }
