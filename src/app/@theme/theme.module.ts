@@ -14,6 +14,7 @@ import {
 import {
   DDELayoutComponent
 } from './layouts/dde.layout';
+import { EventsService } from '../@core/data/events/events.service';
 
 const BASE_MODULES = [
   CommonModule,
@@ -44,6 +45,9 @@ const COMPONENTS = [
   ],
   entryComponents: [
     DDECalendarComponent
+  ],
+  providers: [
+    EventsService
   ]
 })
 export class ThemeModule {

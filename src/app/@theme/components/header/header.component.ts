@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { DDECalendarComponent } from '../calendar/ddecalendar.component';
+import { EventsService } from '../../../@core/data/events/events.service';
 
 @Component({
   selector: 'app-dde-header',
