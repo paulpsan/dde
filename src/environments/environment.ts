@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  BASE_SOCKET_IO_URL: 'http://localhost:1337',
   BASE_GRAPHQL_URL: 'http://localhost:1337/graphql'
 };
 

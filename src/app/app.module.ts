@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
 import { registerLocaleData } from '@angular/common';
 import localEs from '@angular/common/locales/es';
@@ -15,6 +17,8 @@ import { ThemeModule } from './@theme/theme.module';
 import { ArticlesService } from './@core/data/articles/articles.service';
 import { environment } from '../environments/environment';
 
+const config: SocketIoConfig = { url: environment.BASE_SOCKET_IO_URL, options: {} };
+
 @NgModule({
   declarations: [
     AppComponent
@@ -25,7 +29,11 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     HttpClientModule,
     ApolloBoostModule,
-    ThemeModule.forRoot()
+    ThemeModule.forRoot(),
+    ToastrModule.forRoot({
+      newestOnTop: true
+    }),
+    SocketIoModule.forRoot(config)
   ],
   providers: [
     { provide:  APP_BASE_HREF, useValue: '/' },
