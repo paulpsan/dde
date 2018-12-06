@@ -15,16 +15,16 @@ export class ArticlesService {
     const GET_LAST_ARTICLES = gql`
       {
         articulos(limit: 3, sort: "updatedAt:desc") {
+          _id,
           titulo
         }
       }
     `;
+
     return this.apollo
       .watchQuery({
         query: GET_LAST_ARTICLES
       })
-      .valueChanges.pipe(
-        map(result => result.data['articulos'])
-      );
+      .valueChanges;
   }
 }

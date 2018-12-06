@@ -25,7 +25,7 @@
         <div class="text-center">
             <i class="fa fa-spin fa-spinner fa-5x"></i>
             <br>
-            Loading events...
+            Cargando eventos...
         </div>
     </ng-template>
 
@@ -63,7 +63,7 @@
     </div>
     <br>
     <!-- *ngIf="events$ | async; else loading; let events" | select: 'feed'-->
-    <div *ngIf="events$ | async; else loading; let events">
+    <div *ngIf="(events$ | async) as events; else loading">
         <div [ngSwitch]="view">
             <mwl-calendar-month-view *ngSwitchCase="'month'" [viewDate]="viewDate" [events]="events" [activeDayIsOpen]="activeDayIsOpen"
                 (dayClicked)="dayClicked($event.day)" (eventClicked)="eventClicked($event.event)">
