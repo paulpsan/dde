@@ -1,24 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'apollo-client/util/Observable';
+import { Observable } from 'rxjs';
 
 import { ArticlesService } from '../../@core/data/articles/articles.service';
-import { Article } from '../../@core/data/articles/article.model';
+import { map } from 'rxjs/operators';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  articles = [];
+  articles$: Observable<any>;
 
   constructor(private articlesService: ArticlesService) { }
 
   ngOnInit() {
-    this.articlesService.getLastArticles()
-      .subscribe(data => {
-        console.log(data);
-        this.articles = data;
-      });
+    this.articles$ = this.articlesService.getLastArticles().pipe(
+      map(({ data }) => {
+        return data['articulos'];
+      }));
   }
 
 }

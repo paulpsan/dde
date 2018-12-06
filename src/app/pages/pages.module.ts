@@ -5,6 +5,7 @@ import { ThemeModule } from '../@theme/theme.module';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NoticiasComponent } from './noticias/noticias.component';
 
 const PAGES_COMPONENTS = [
   PagesComponent,
@@ -17,7 +18,8 @@ const PAGES_COMPONENTS = [
     ThemeModule
   ],
   declarations: [
-    ...PAGES_COMPONENTS
+    ...PAGES_COMPONENTS,
+    NoticiasComponent
   ]
 })
 export class PagesModule { }
