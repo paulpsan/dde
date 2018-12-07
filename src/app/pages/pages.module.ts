@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 
 import { PagesRoutingModule } from './pages-routing.module';
 import { ThemeModule } from '../@theme/theme.module';
-import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
 
 import { PagesComponent } from './pages.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -16,8 +15,7 @@ const PAGES_COMPONENTS = [
 @NgModule({
   imports: [
     PagesRoutingModule,
-    ThemeModule,
-    CKEditorModule
+    ThemeModule
   ],
   declarations: [
     ...PAGES_COMPONENTS,

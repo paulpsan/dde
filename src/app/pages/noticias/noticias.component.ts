@@ -1,3 +1,4 @@
+declare var ContentTools: any;
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
